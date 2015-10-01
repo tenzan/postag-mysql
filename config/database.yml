@@ -13,16 +13,13 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: <%= ENV['HOSTGATOR_USER'] %>
-  password: <%= ENV['HOSTGATOR_PASSWORD'] %>
-  host: <%= ENV['HOSTGATOR_HOST'] %>
-  port: 3306
-  socket: /var/lib/mysql/mysql.sock
-  # socket: /tmp/mysql.sock
+  username: root
+  password: root
+  host: localhost
 
 development:
   <<: *default
-  database: tenzan_postag # <% ENV['HOSTGATOR_DATABASE'] %>
+  database: postag_development # <% ENV['HOSTGATOR_DATABASE'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -52,4 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: tenzan_postag
+  database: postag_production
+  username: postag
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
