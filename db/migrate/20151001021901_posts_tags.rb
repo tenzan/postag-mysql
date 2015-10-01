@@ -1,7 +1,7 @@
 class PostsTags < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string :name
+      t.string :title
       t.timestamps null: false
     end
 
