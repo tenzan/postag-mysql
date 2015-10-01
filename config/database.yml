@@ -52,7 +52,4 @@ test:
 #
 production:
   <<: *default
-  # database: postag_production
-  # username: postag-mysql
-  # password: <%= ENV['POSTAG-MYSQL_DATABASE_PASSWORD'] %>
   database: tenzan_postag
